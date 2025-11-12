@@ -1,6 +1,7 @@
 import pytest
 
 from src.sorts.BubbleSort import BubbleSort
+from src.sorts.InsertionSort import InsertionSort
 
 
 @pytest.mark.parametrize(
@@ -30,7 +31,8 @@ from src.sorts.BubbleSort import BubbleSort
 )
 def test_sorts_algorithms_with_all_integers(array: list[int]):
     sorts_methods = [
-        BubbleSort()
+        BubbleSort(),
+        InsertionSort()
     ]
     for method in sorts_methods:
         assert method.sort(array.copy()) == sorted(array.copy())
