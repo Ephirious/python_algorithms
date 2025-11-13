@@ -22,7 +22,7 @@ class QuickSort(AbstractSortingAlgorithm):
 
 
     def _partition(self, array: list[int], left: int, right: int, pivot: int) -> int:
-        left_ptr = left - 1
+        left_ptr = left
         right_ptr = right + 1
         while True:
             while left_ptr < right:
