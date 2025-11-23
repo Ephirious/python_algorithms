@@ -1,4 +1,4 @@
-from src.sorts.AbstractSortingAlgorithm import AbstractSortingAlgorithm
+from src.sorts.abstract_sorting_algorithm import AbstractSortingAlgorithm
 
 
 class SelectionSort(AbstractSortingAlgorithm):

@@ -1,10 +1,13 @@
 import pytest
 
-from src.sorts.BubbleSort import BubbleSort
-from src.sorts.CountingSort import CountingSort
-from src.sorts.InsertionSort import InsertionSort
-from src.sorts.QuickSort import QuickSort
-from src.sorts.SelectionSort import SelectionSort
+from src.sorts.bubble_sort import BubbleSort
+from src.sorts.bucket_sort import BucketSort
+from src.sorts.counting_sort import CountingSort
+from src.sorts.heap_sort import HeapSort
+from src.sorts.insertion_sort import InsertionSort
+from src.sorts.quick_sort import QuickSort
+from src.sorts.radix_sort import RadixSort
+from src.sorts.selection_sort import SelectionSort
 
 
 @pytest.mark.parametrize(
@@ -37,7 +40,8 @@ def test_sorts_algorithms_with_all_integers(array: list[int]):
         BubbleSort(),
         InsertionSort(),
         SelectionSort(),
-        QuickSort()
+        QuickSort(),
+        HeapSort()
     ]
     for method in sorts_methods:
         assert method.sort(array) == sorted(array)
@@ -68,7 +72,10 @@ def test_sorts_algorithms_with_natural_numbers(array: list[int]):
         InsertionSort(),
         SelectionSort(),
         QuickSort(),
-        CountingSort()
+        CountingSort(),
+        RadixSort(),
+        BucketSort(),
+        HeapSort()
     ]
     for method in sorts_methods:
         assert method.sort(array) == sorted(array)

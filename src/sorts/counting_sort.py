@@ -1,10 +1,10 @@
-from src.sorts.AbstractSortingAlgorithm import AbstractSortingAlgorithm
+from src.sorts.abstract_sorting_algorithm import AbstractSortingAlgorithm
 
 
 class CountingSort(AbstractSortingAlgorithm):
     def sort(self, array: list[int]) -> list[int]:
         if len(array) <= 1:
-            return []
+            return array
         return self.rebuild(self.count(array))
 
     def count(self, array: list[int]) -> list[int]:
@@ -23,4 +23,4 @@ class CountingSort(AbstractSortingAlgorithm):
         return new_array
 
 if __name__ == "__main__":
-    print(CountingSort().sort([3, 1, 4, 1, 5, 9, 2, 6]))
+    print(CountingSort().sort([0]))
