@@ -3,8 +3,8 @@ from random import Random
 class GeneratorTestCases:
     @staticmethod
     def rand_int_array(number_of_elements: int,
-                       upper_bound: int,
                        lower_bound: int,
+                       upper_bound: int,
                        *,
                        distinct = False,
                        user_seed = None
