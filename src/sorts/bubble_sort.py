@@ -3,9 +3,10 @@ from src.sorts.abstract_sorting_algorithm import AbstractSortingAlgorithm
 
 class BubbleSort(AbstractSortingAlgorithm):
     def sort(self, array: list[int]) -> list[int]:
-        for i in range(len(array) - 1):
-            for j in range(i + 1, len(array)):
-                if array[i] > array[j]:
-                    array[i], array[j] = array[j], array[i]
+        copy = array.copy()
+        for i in range(len(copy) - 1):
+            for j in range(i + 1, len(copy)):
+                if copy[i] > copy[j]:
+                    copy[i], copy[j] = copy[j], copy[i]
 
-        return array
+        return copy

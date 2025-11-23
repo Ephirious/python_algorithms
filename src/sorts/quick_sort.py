@@ -1,4 +1,8 @@
+import sys
+
 from src.sorts.abstract_sorting_algorithm import AbstractSortingAlgorithm
+
+sys.setrecursionlimit(200000)
 
 
 class QuickSort(AbstractSortingAlgorithm):
