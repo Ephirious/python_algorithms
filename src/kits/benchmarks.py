@@ -59,14 +59,11 @@ def create_markdown_report(max_exponent: int):
         "Insertion Sort": InsertionSort().sort,
         "Quick Sort": QuickSort().sort,
         "Heap Sort": HeapSort().sort,
-        "Bucket Sort": BucketSort().sort
-
-    }
-    algorithms_for_counting = {
+        "Bucket Sort": BucketSort().sort,
         "Counting Sort": CountingSort().sort,
-        "Radix Sort": RadixSort().sort,
-        "Bucket Sort": BucketSort().sort
+        "Radix Sort" : RadixSort().sort
     }
+
     count_elements = [10 ** i for i in range(1, max_exponent + 1)]
 
     result_of_dicts = []
@@ -82,11 +79,10 @@ def create_markdown_report(max_exponent: int):
             "Rand int array"    : GeneratorTestCases.rand_int_array(count, 0, count - 1, user_seed=seed**2),
             "Many duplicates"   : GeneratorTestCases.many_duplicates(count, int(count * 0.5), user_seed=seed**2),
             "Reverse sorted"    : GeneratorTestCases.reverse_sorted(count),
-            "Rand float array"  : GeneratorTestCases.rand_float_array(count, count * 0.5, count * 0.95, user_seed=seed**2)
         }
-        result_of_dicts.append((benchmark_sorts(arrays, algorithms_for_comparison), count))
+        result_of_dicts.append((benchmark_sorts(arrays, algorithms_for_comparison), count))  # type: ignore
 
     with open("benchmarks.md", mode="w") as report:
-        report.write(generate_markdown_table(result_of_dicts))
+        report.write(generate_markdown_table(result_of_dicts))  # type: ignore
 
 create_markdown_report(4)
